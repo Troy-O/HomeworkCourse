@@ -23,35 +23,19 @@ public class One {
             String name="break";
             System.out.println("Напиши слово:");
             Scanner scan=new Scanner(System.in);
-            String word=scan.next();
+            String word=scan.nextLine();
+            if( !word.equals(name)){
 
-
-            System.out.println(word);
-            System.out.println(name);
-
-
-
-            if( word!=name){
-                System.out.println("hash word "+" "+word.hashCode()+"hash name"+" "+name.hashCode());
                 System.out.println(list.add(word));
                 System.out.println(list.toString());
-            }else if (word.hashCode()==name.hashCode()){
-                //що пробував у else if  ставити:
-                //word==name    word=="break"
+            }else if (word.equals(name)){
+
                 System.out.println("Ви ввели слово break");
                 break;
             }else {
                 System.out.println("якась фігня");
             }
         }
-
-        //потім видалити коли вирішу проблему із break,тому шо вже не треба  вручну додавання бо буде scanner
-        list.add("sonicc");
-        list.add("so");
-        list.add("sic");
-        list.add("c");
-        list.add("o");
-
     }
 
 
@@ -89,13 +73,7 @@ public class One {
 
 
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        One one = (One) o;
-        return Objects.equals(a, one.a);
-    }
+
 
     @Override
     public int hashCode() {
