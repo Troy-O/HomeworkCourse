@@ -71,9 +71,13 @@ public class One {
 
 
 
-
-
-
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        One one = (One) o;
+        return Objects.equals(a, one.a);
+    }
 
     @Override
     public int hashCode() {
@@ -86,5 +90,6 @@ public class One {
                 "a='" + a + '\'' +
                 '}';
     }
+
 
 }
