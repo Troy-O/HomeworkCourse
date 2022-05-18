@@ -68,9 +68,6 @@ public class One {
     }
 
 
-
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -90,6 +87,4 @@ public class One {
                 "a='" + a + '\'' +
                 '}';
     }
-
-
 }
