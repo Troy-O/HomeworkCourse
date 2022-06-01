@@ -17,13 +17,33 @@ public class Commodity implements Comparable<Commodity>{
     List<String> listlinked=new LinkedList<>();
     //цей ліст для сортування, для завдання 4,5,6,7
     List<Commodity>  list=new ArrayList<>();
+    Sort_name sort_name=new Sort_name();
+    Sort_lenght sort_lenght=new Sort_lenght();
+    Sort_width sort_width=new Sort_width();
+    Sort_weight sort_weight=new Sort_weight();
+
+
+
+
 
 
     //для перевірки справності  2 3 8 методу треба запустити 1,тому що наповнення є тільки в 1 методі
     // Якщо запустити зразу 2 3 або 8 нічого не буде бо колекція пуста
     void hometask_1() {
         boolean a=true;
+//        класи комодіті для наповнення ліста для завдання 4,5,6,7
+        Commodity com5=new Commodity("Вода",4,10,5);
+        Commodity com1=new Commodity("Чипси",5,15,5);
+        Commodity com2=new Commodity("Гречка",6,20,1);
+        Commodity com3=new Commodity("Сигарети",8,5,2);
+        Commodity com4=new Commodity("Гречка",6,8,1);
+        list.add(com1);
+        list.add(com2);
+        list.add(com3);
+        list.add(com4);
+        list.add(com5);
         while (a) {
+
             System.out.println("Введи число:");
             Scanner scanner = new Scanner(System.in);
             int x = scanner.nextInt();
@@ -38,16 +58,20 @@ public class Commodity implements Comparable<Commodity>{
                     change();
                     break;
                 case 4:
-                    sort();
+                    Collections.sort(list,sort_name);
+                    System.out.println(list.toString());
                     break;
                 case 5:
-                    sort();
+                    Collections.sort(list,sort_lenght);
+                    System.out.println(list.toString());
                     break;
                 case 6:
-                    sort();
+                    Collections.sort(list,sort_width);
+                    System.out.println(list.toString());
                     break;
                 case 7:
-                    sort();
+                    Collections.sort(list,sort_weight);
+                    System.out.println(list.toString());
                     break;
                 case 8:
                     i_element_collections();
@@ -67,10 +91,7 @@ public class Commodity implements Comparable<Commodity>{
         Scanner scanner=new Scanner(System.in);
         String s=scanner.nextLine();
         listlinked.add(s);
-        listlinked.add("Банан");
-        listlinked.add("Сигарети");
-        listlinked.add("Вода");
-        listlinked.add("сир");
+
         System.out.println(listlinked.toString());
 
     }
@@ -185,3 +206,34 @@ public class Commodity implements Comparable<Commodity>{
         return Objects.hash(name, lenght, width, weight);
     }
 }
+
+
+
+
+
+class Sort_name implements Comparator<Commodity>{
+    @Override
+    public int compare(Commodity o1, Commodity o2) {
+        return o1.name.compareTo(o2.name);
+    }
+}
+class Sort_lenght implements  Comparator<Commodity>{
+    @Override
+    public int compare(Commodity o1, Commodity o2) {
+        return o1.lenght.compareTo(o2.lenght);
+    }
+}
+
+class Sort_width implements Comparator<Commodity>{
+    @Override
+    public int compare(Commodity o1, Commodity o2) {
+        return o1.width.compareTo(o2.width);
+    }
+}
+class  Sort_weight implements Comparator<Commodity>{
+    @Override
+    public int compare(Commodity o1, Commodity o2) {
+        return o1.weight.compareTo(o2.weight);
+    }
+}
+
