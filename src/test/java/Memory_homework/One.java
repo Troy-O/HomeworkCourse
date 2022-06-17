@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class One {
+public class One  {
     void hometask_1() {
         String array[] = new String[2];
         String name;
@@ -65,4 +65,6 @@ public class One {
 
 
     }
+
+
 }
