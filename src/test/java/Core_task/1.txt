@@ -1,0 +1,4 @@
+254142,Samsung,A51,500
+212421,Apple,11pro,700
+884124,Xiomi,350ultra,300
+124523,Huawei,5000ultra,450
